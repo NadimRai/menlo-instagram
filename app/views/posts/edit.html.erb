@@ -4,7 +4,13 @@
 
 <%= render 'form' %>
 
-<div class="text-center edit-links">
-  <%= link_to "Delete Post", post_path(@post), method: :delete, data: {confirm: "Are you sure ?"} %> |
-  <%= link_to "Cancel", root_path %>
-</div>
+<% if @post.user.id == current_user.id %>
+	<div class="text-center edit-links">
+	  <%= link_to "Delete Post", post_path(@post), method: :delete, data: {confirm: "Are you sure ?"} %> |
+	  <%= link_to "Cancel", root_path %>
+	</div>
+<% else %>
+	<div class="text-center edit-links">
+		<%= link_to "Cancel", root_path %>
+	</div>
+<% end %>
