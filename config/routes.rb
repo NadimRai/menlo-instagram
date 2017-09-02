@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'profiles/show'
+
   devise_for :users, :controllers => { registrations: 'registrations' }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :posts do 
@@ -6,5 +8,5 @@ Rails.application.routes.draw do
   end
 
   root 'posts#index'
-  get ':user_name', to: 'profile#show', as: :profile
+  get ':user_name', to: 'profiles#show', as: :profile
 end
