@@ -22,7 +22,20 @@ body {
   font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 
+html {
+  height: 100%;
+}
+
+
 /* ## NAVBAR CUSTOMISATIONS ## */
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.alert {
+  margin-bottom: 0px;
+}
 
 .navbar-brand {
   a {
@@ -155,4 +168,43 @@ body {
 .edit-links {
   margin-top: 20px;
   margin-bottom: 40px;
+}
+
+/***** Registration Form ******************/
+.registration-bg {
+  padding-top: 4em;
+  height: 100%;
+  background-image: image-url('bg.jpg');
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.log-in{
+  margin-left: auto;
+  margin-right: auto;
+  text-align:center;
+  border: none;
+}
+
+.panel {
+  border-radius: 8px;
+}
+
+.panel-heading{
+  h1 {
+    text-align: center;
+  }
+}
+
+/******** Log In Form ***********/
+.login-bg {
+  padding-top: 4em;
+  height: 100%;
+  background-image: image-url('login.jpg');
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
