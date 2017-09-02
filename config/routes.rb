@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   end
 
   root 'posts#index'
+  get ':user_name', to: 'profile#show', as: :profile
 end

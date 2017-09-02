@@ -3,7 +3,7 @@
     <div class="post-head">
       <div class="thumb-img"></div>
       <div class="user-name">
-        <%= post.user.user_name %>
+        <%= link_to post.user.user_name, profile_path(post.user.user_name) %>
       </div>
       <div class="time-ago">
         <%= time_ago_in_words post.created_at %>
@@ -21,10 +21,16 @@
           <%= post.caption %>
         </div>
         <div class="comments" id="comments_<%= post.id %>">
-          <% if post.comments %>
-            <%= render post.comments, post: post %>
+          <% if post.comments.any? %>
+            <%= render post.comments.first(3), post: post %>
+            <% unless post.comments.count <= 3 %>
+              <div class="paginator" id="#comments-paginator-#{post.id}">
+                <%= link_to "view all #{post.comments.count} comments", post_comments_path(post), remote: true, class: 'more-comments', id: "more_comments_#{post.id}", data: {post_id: "#{post.id}", type: "html", value: "#{post.comments.count}"} %>
+              </div>
+            <% end %>
           <% end %>
         </div>
+
       </div>
     </div>
     <div class="comment-like-form row">
