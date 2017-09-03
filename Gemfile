@@ -59,4 +59,5 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'devise', '~> 4.3'
 gem 'kaminari', '~> 1.0', '>= 1.0.1'
 gem 'jquery-turbolinks', '~> 2.1'
+gem 'acts_as_votable', '~> 0.10.0'
 
